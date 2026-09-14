@@ -1,0 +1,614 @@
+/* ============================================================
+   釜山 8天7夜行程 — 自訂樣式（搭配 Bootstrap 5 使用）
+   ============================================================ */
+
+:root {
+  --navy: #0f2a3d;
+  --navy-soft: #6c8a9c;
+  --paper: #f1f1ec;
+  --paper-raised: #ffffff;
+  --coral: #e1552e;
+  --teal: #2e7a72;
+  --gold: #d89a1e;
+  --line: rgba(15, 42, 61, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--coral);
+  color: #fff;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: radial-gradient(
+    ellipse 120% 90% at 15% -10%,
+    #1c3f56 0%,
+    var(--navy) 45%,
+    #0a1e2c 100%
+  );
+  color: #efe7da;
+  padding: 4.2rem 0 3.4rem;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  background: repeating-linear-gradient(
+    115deg,
+    transparent 0 34px,
+    rgba(239, 231, 218, 0.05) 34px 35px
+  );
+  opacity: 0.6;
+}
+.hero-eyebrow {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--coral);
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 1.1rem;
+}
+.hero-eyebrow::before {
+  content: "◈";
+  font-size: 0.85em;
+}
+.hero-title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  font-size: clamp(2.6rem, 9vw, 4.6rem);
+  margin: 0 0 0.3rem;
+  letter-spacing: 0.01em;
+  color: #f5f0e6;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: #c7d3d6;
+  margin: 0 0 2.1rem;
+  max-width: 34em;
+}
+.meta-pill {
+  background: rgba(239, 231, 218, 0.08);
+  border: 1px solid rgba(239, 231, 218, 0.22);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: #efe7da;
+}
+.meta-pill b {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ---------- Prep accordion (Bootstrap accordion overrides) ---------- */
+.prep-wrap {
+  margin-top: 1.4rem;
+  position: relative;
+  z-index: 2;
+}
+.accordion-item {
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 14px 30px -22px rgba(15, 42, 61, 0.35);
+  margin-bottom: 0.9rem;
+}
+.accordion-button {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  color: var(--navy) !important;
+  background: var(--paper-raised) !important;
+  box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--navy) !important;
+  background: var(--paper-raised) !important;
+}
+.accordion-button::after {
+  filter: none;
+}
+.accordion-body h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1rem;
+  margin: 0 0 0.6rem;
+  color: var(--coral);
+}
+.accordion-body .note {
+  font-size: 0.86rem;
+  color: #42565f;
+  margin: 0.4rem 0 0;
+}
+.flight-row {
+  font-size: 0.9rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--line);
+}
+.flight-row:last-child {
+  border-bottom: none;
+}
+.flight-row b {
+  display: block;
+  color: var(--navy);
+}
+.accordion-body a {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 1.2rem;
+  font-size: 0.86rem;
+}
+.checklist.single-col {
+  columns: 1;
+}
+.checklist li {
+  break-inside: avoid;
+  padding: 0.28rem 0 0.28rem 1.3rem;
+  position: relative;
+  color: #42565f;
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* 出發前待辦 */
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.65rem;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.87rem;
+  color: var(--navy);
+}
+.todo-item .chk {
+  width: 19px;
+  height: 19px;
+  border-radius: 6px;
+  background: var(--gold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+.todo-item a {
+  color: var(--teal);
+}
+
+/* 打包清單 */
+.pack-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+.pack-card-header {
+  background: var(--navy);
+  color: #efe7da;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.9rem;
+  font-family: "Noto Serif TC", serif;
+}
+.pack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.pack-list li {
+  font-size: 0.85rem;
+  color: #42565f;
+  padding-left: 1.15rem;
+  position: relative;
+}
+.pack-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.area h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  color: var(--teal);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.02em;
+}
+.area p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #42565f;
+  line-height: 1.7;
+}
+
+/* image gallery inside accordion */
+.img-gallery-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+.img-gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.img-gallery-item figcaption {
+  font-size: 0.78rem;
+  color: #42565f;
+  padding: 0.6rem 0.7rem;
+  line-height: 1.5;
+}
+.rule-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0.12rem 0.5rem;
+  border-radius: 100px;
+  margin-bottom: 0.35rem;
+}
+.rule-tag.no {
+  background: rgba(225, 85, 46, 0.12);
+  color: var(--coral);
+}
+.rule-tag.ok {
+  background: rgba(46, 122, 114, 0.12);
+  color: var(--teal);
+}
+.rule-tag.info {
+  background: rgba(108, 138, 156, 0.14);
+  color: var(--navy-soft);
+}
+
+/* ---------- Day nav (Bootstrap nav-pills override) ---------- */
+.daynav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  padding: 1.4rem 0 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+.day-nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.55rem;
+  scrollbar-width: none;
+}
+.day-nav::-webkit-scrollbar {
+  display: none;
+}
+.day-nav .nav-link {
+  font-family: "Space Grotesk", sans-serif;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  text-align: left;
+  min-width: 78px;
+  color: var(--navy);
+  flex: 0 0 auto;
+}
+.day-nav .nav-link .num {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.day-nav .nav-link .date {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--navy-soft);
+}
+.day-nav .nav-link.active {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.day-nav .nav-link.active .num,
+.day-nav .nav-link.active .date {
+  color: #efe7da;
+}
+
+/* ---------- Day content ---------- */
+.day-heading .big {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--navy);
+}
+.day-heading .small {
+  color: var(--navy-soft);
+  font-size: 0.95rem;
+}
+
+.item-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  position: relative;
+}
+.item-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--cat-color, var(--navy-soft));
+}
+.item-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.item-name {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.item-tag {
+  font-size: 0.7rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: var(--cat-color, var(--navy-soft));
+  background: color-mix(
+    in srgb,
+    var(--cat-color, var(--navy-soft)) 12%,
+    transparent
+  );
+  padding: 0.18rem 0.55rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.item-desc {
+  color: #5a6b72;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+.item-notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.item-notes li {
+  font-size: 0.85rem;
+  color: var(--navy);
+  background: rgba(216, 154, 30, 0.1);
+  border-left: 2px solid var(--gold);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 0.35rem;
+  display: block;
+}
+.item-links a {
+  font-size: 0.78rem;
+  text-decoration: none;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: 100px;
+  padding: 0.28rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.item-links a:hover {
+  background: var(--teal);
+  color: #fff;
+}
+.item-links a.official {
+  color: var(--coral);
+  border-color: var(--coral);
+}
+.item-links a.official:hover {
+  background: var(--coral);
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  color: var(--navy-soft);
+  font-size: 0.8rem;
+  padding: 2rem 0 3rem;
+}
+
+/* ---------- 餐廳預約提醒（通知畫面，手風琴形式） ---------- */
+.resv-wrap {
+  margin-top: 1.4rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.9rem;
+}
+.resv-accordion-item {
+  border: 1px solid rgba(225, 85, 46, 0.35) !important;
+}
+.resv-accordion-item .accordion-button {
+  background: linear-gradient(
+    90deg,
+    rgba(225, 85, 46, 0.1),
+    rgba(225, 85, 46, 0.03)
+  ) !important;
+  color: var(--coral) !important;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+.resv-accordion-item .accordion-button:not(.collapsed) {
+  color: var(--coral) !important;
+  box-shadow: inset 0 -1px 0 rgba(225, 85, 46, 0.2) !important;
+}
+.resv-panel-sub {
+  font-size: 0.82rem;
+  color: var(--navy-soft);
+  margin: 0 0 0.6rem;
+}
+.resv-section {
+  margin-top: 1.1rem;
+}
+.resv-section h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1rem;
+  margin: 0 0 0.8rem;
+  color: var(--coral);
+}
+.resv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+.resv-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: var(--paper);
+  border-left: 4px solid var(--navy-soft);
+}
+.resv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+.resv-meal {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy-soft);
+}
+.resv-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.resv-detail {
+  font-size: 0.82rem;
+  color: #5a6b72;
+  margin-bottom: 0.55rem;
+}
+.resv-link {
+  font-size: 0.78rem;
+  text-decoration: none;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: 100px;
+  padding: 0.28rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.resv-link:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.resv-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.resv-badge-high {
+  background: rgba(225, 85, 46, 0.14);
+  color: var(--coral);
+}
+.resv-badge-mid {
+  background: rgba(216, 154, 30, 0.16);
+  color: #a3760f;
+}
+.resv-badge-low {
+  background: rgba(46, 122, 114, 0.14);
+  color: var(--teal);
+}
+.resv-badge-over {
+  background: var(--coral);
+  color: #fff;
+}
+.resv-badge-dayof {
+  background: rgba(108, 138, 156, 0.16);
+  color: var(--navy-soft);
+}
+.resv-badge-booked {
+  background: rgba(46, 122, 114, 0.16);
+  color: var(--teal);
+}
+
+.resv-high {
+  border-left-color: var(--coral);
+}
+.resv-mid {
+  border-left-color: var(--gold);
+}
+.resv-low {
+  border-left-color: var(--teal);
+}
+.resv-over {
+  border-left-color: var(--coral);
+  background: rgba(225, 85, 46, 0.06);
+}
+.resv-dayof {
+  border-left-color: var(--navy-soft);
+}
+.resv-booked {
+  border-left-color: var(--teal);
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 3rem 0 2.6rem;
+  }
+}
