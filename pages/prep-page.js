@@ -121,7 +121,6 @@ export function renderPrepAccordion(root) {
             <div class="flight-row">
               <b>${hotel.name}</b>
               ${hotel.address}<br>${hotel.checkinout}<br>
-              <a href="${hotel.url}" target="_blank" rel="noopener">在 Naver 地圖上查看</a>
             </div>
           </div>
         </div>
