@@ -247,7 +247,7 @@ export const DAYS = [
             url: "https://www.catchtable.net/zh-TW/explore/shop/nasari",
           },
         ],
-        desc: "廣安5號出口 CatchTable(9/25 23:00訂位)",
+        desc: "廣安5號出口 CatchTable(9/25 23:00訂位) <br> 11:00 4人｜12:00 4人｜11:00 4人無關｜12:00 4人無關 已預訂",
         type: "午餐",
       },
       {
@@ -336,7 +336,7 @@ export const DAYS = [
             url: "https://naver.me/xHERnNMO",
           },
         ],
-        desc: "海雲台 Naver(9/26 23:00訂位)",
+        desc: "海雲台 Naver(9/26 23:00訂位) <br> 12:00 8人 已預訂",
         type: "午餐",
       },
       {
@@ -349,7 +349,7 @@ export const DAYS = [
             url: "https://www.bluelinepark.com/chn/booking.do",
           },
         ],
-        desc: "海雲台5號出口 15:00尾浦->清沙埔(海)  9/29 台灣時間 06:00 要預約",
+        desc: "海雲台5號出口 15:00尾浦->清沙埔(海)  9/29 台灣時間 06:00 要預約 <br> 15:00｜票券：2人＋3人＋3人 已預訂",
         type: "景點／體驗",
       },
       {
@@ -402,7 +402,7 @@ export const DAYS = [
             url: "https://www.catchtable.net/zh-TW/shop/hgh",
           },
         ],
-        desc: "海雲台 CATCHTABLE 當天/現場取號17:00",
+        desc: "海雲台 CATCHTABLE 當天／現場候位<br>現場候位於16:00開始<br>遠端候位於18:00開放(週一至週五)",
         type: "晚餐",
       },
       {
@@ -539,7 +539,7 @@ export const DAYS = [
         day: "Day5 10/28(三)",
         urls: ["https://naver.me/G386sb6m"],
         extra_links: [],
-        desc: "西面2號出口 CatchTable 已預訂 19:30 4+4",
+        desc: "西面2號出口 CatchTable 4+4 已預訂",
         type: "晚餐",
       },
     ],
@@ -624,7 +624,7 @@ export const DAYS = [
         day: "Day7 10/30(五)",
         urls: ["https://naver.me/5GpYZNsj"],
         extra_links: [],
-        desc: "廣安 只能現場登記10:00開放",
+        desc: "廣安 生效日期:自2026年2月9日起<br>現場等候登記:上午10:00開始<br>線上等候登記:上午11:00開始",
         type: "午餐",
       },
       {
@@ -637,7 +637,7 @@ export const DAYS = [
             url: "https://www.catchtable.net/zh-TW/shop/gunamroast",
           },
         ],
-        desc: "海雲台  CatchTable 9/29預訂",
+        desc: "海雲台  CatchTable 9/29預訂 <br> 18:00 8人 已預訂",
         type: "晚餐",
       },
     ],
@@ -689,58 +689,87 @@ export const TYPE_META = {
 export const RESERVATIONS = {
   // 需提前預約：deadline 為台灣時間可預約的開放時間
   advance: [
-    {
-      mealLabel: "10/26 午餐",
-      name: "Nasari 海景刀削麵煎餅",
-      channel: "CatchTable",
-      deadline: "2026-09-25T23:00:00+08:00",
-      url: "https://www.catchtable.net/zh-TW/explore/shop/nasari",
-    },
-    {
-      mealLabel: "10/27 午餐",
-      name: "醬蟹",
-      channel: "Naver",
-      deadline: "2026-09-26T23:00:00+08:00",
-      url: "https://naver.me/xHERnNMO",
-    },
-    {
-      mealLabel: "10/27 15:00",
-      name: "膠囊列車（尾浦出發）",
-      channel: "官方網站",
-      deadline: "2026-09-29T06:00:00+08:00",
-      url: "https://www.bluelinepark.com/chn/booking.do",
-    },
-    {
-      mealLabel: "10/30 晚餐",
-      name: "Gunam Roast 烤厚豬（8人）",
-      channel: "CatchTable",
-      deadline: "2026-09-29T23:00:00+08:00",
-      url: "https://www.catchtable.net/zh-TW/shop/gunamroast",
-    },
+    // {
+    //   mealLabel: "10/26 午餐",
+    //   name: "Nasari 海景刀削麵煎餅",
+    //   channel: "CatchTable",
+    //   deadline: "2026-09-25T23:00:00+08:00",
+    //   url: "https://www.catchtable.net/zh-TW/explore/shop/nasari",
+    // },
+    // {
+    //   mealLabel: "10/27 午餐",
+    //   name: "醬蟹",
+    //   channel: "Naver",
+    //   deadline: "2026-09-26T23:00:00+08:00",
+    //   url: "https://naver.me/xHERnNMO",
+    // },
+    // {
+    //   mealLabel: "10/27 15:00",
+    //   name: "膠囊列車（尾浦出發）",
+    //   channel: "官方網站",
+    //   deadline: "2026-09-29T06:00:00+08:00",
+    //   url: "https://www.bluelinepark.com/chn/booking.do",
+    // },
+    // {
+    //   mealLabel: "10/30 晚餐",
+    //   name: "Gunam Roast 烤厚豬（8人）",
+    //   channel: "CatchTable",
+    //   deadline: "2026-09-29T23:00:00+08:00",
+    //   url: "https://www.catchtable.net/zh-TW/shop/gunamroast",
+    // },
   ],
   // 當天處理：韓國時間，出發前不用預約，當天現場取號／抽號
   dayOf: [
     {
       mealLabel: "10/27 晚餐",
       name: "韓牛",
-      method: "CATCHTABLE 當天／現場取號 17:00",
+      method:
+        "CATCHTABLE 當天／現場候位<br>現場候位於16:00開始<br>遠端候位於18:00開放(週一至週五)",
       url: "https://www.catchtable.net/zh-TW/shop/hgh",
     },
     {
       mealLabel: "10/28 午餐",
-      name: "Op1 李在摩（西面中央店） ／ Op2 螞蟻家章魚鍋",
-      method: "Op1：CatchTable 當天抽號，9:20 開放｜Op2：現場登記",
+      name: "李在摩（西面中央店)",
+      method: "CatchTable 當天抽號 9:20開放",
       url: "https://www.catchtable.net/zh-TW/shop/leejaemopizza_seomyeoncentral",
+    },
+    {
+      mealLabel: "10/28 午餐",
+      name: "螞蟻家章魚鍋",
+      method: "現場登記",
     },
     {
       mealLabel: "10/30 午餐",
       name: "豚笑豬排",
-      method: "只能現場登記，11:00 開放",
+      method:
+        "生效日期:自2026年2月9日起<br>現場等候登記:上午10:00開始<br>線上等候登記:上午11:00開始",
       url: "https://www.catchtable.net/zh-TW/shop/tonshou__gwangan",
     },
   ],
   // 已預約完成
-  booked: [{ mealLabel: "10/28 晚餐", name: "濟州家烤豬", note: "4＋4人" }],
+  booked: [
+    {
+      mealLabel: "10/26 午餐",
+      name: "Nasari 海景刀削麵煎餅",
+      note: "11:00｜4人<br>12:00｜4人<br>11:00｜4人無關<br>12:00｜4人無關",
+    },
+    {
+      mealLabel: "10/27 午餐",
+      name: "醬蟹",
+      note: "12:00｜8人",
+    },
+    {
+      mealLabel: "10/27 膠囊列車・尾浦出發",
+      name: "膠囊列車",
+      note: "15:00｜票券：2人＋3人＋3人",
+    },
+    {
+      mealLabel: "10/30 晚餐",
+      name: "Gunam Roast 烤厚豬",
+      note: "18:00｜8人",
+    },
+    { mealLabel: "10/28 晚餐", name: "濟州家烤豬", note: "4＋4人" },
+  ],
 };
 
 export const PREP = {
