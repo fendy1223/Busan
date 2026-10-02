@@ -327,16 +327,16 @@ export const DAYS = [
         type: "逛街",
       },
       {
-        name: "⭐醬蟹",
+        name: "⭐韓牛",
         day: "Day4 10/27(二)",
-        urls: ["https://naver.me/G1mEmw5H"],
+        urls: ["https://naver.me/54LbRCVK"],
         extra_links: [
           {
-            label: "Naver 訂位",
-            url: "https://naver.me/xHERnNMO",
+            label: "CatchTable 訂位",
+            url: "https://www.catchtable.net/zh-TW/shop/hgh",
           },
         ],
-        desc: "海雲台 Naver(9/26 23:00訂位) <br> 12:00 8人 已預訂",
+        desc: "海雲台 CATCHTABLE 當天／現場候位<br>現場候位於09:00開始<br>遠端候位於11:30開放(週一至週五)",
         type: "午餐",
       },
       {
@@ -393,16 +393,16 @@ export const DAYS = [
         type: "下午茶",
       },
       {
-        name: "⭐韓牛",
+        name: "⭐醬蟹",
         day: "Day4 10/27(二)",
-        urls: ["https://naver.me/54LbRCVK"],
+        urls: ["https://naver.me/G1mEmw5H"],
         extra_links: [
           {
-            label: "CatchTable 訂位",
-            url: "https://www.catchtable.net/zh-TW/shop/hgh",
+            label: "Naver 訂位",
+            url: "https://naver.me/xHERnNMO",
           },
         ],
-        desc: "海雲台 CATCHTABLE 當天／現場候位<br>現場候位於16:00開始<br>遠端候位於18:00開放(週一至週五)",
+        desc: "海雲台 Naver(9/26 23:00訂位) <br> 19:00 8人 已預訂",
         type: "晚餐",
       },
       {
@@ -721,10 +721,10 @@ export const RESERVATIONS = {
   // 當天處理：韓國時間，出發前不用預約，當天現場取號／抽號
   dayOf: [
     {
-      mealLabel: "10/27 晚餐",
+      mealLabel: "10/27 午餐",
       name: "韓牛",
       method:
-        "CATCHTABLE 當天／現場候位<br>現場候位於16:00開始<br>遠端候位於18:00開放(週一至週五)",
+        "CATCHTABLE 當天／現場候位<br>現場候位於09:00開始<br>遠端候位於11:30開放(週一至週五)",
       url: "https://www.catchtable.net/zh-TW/shop/hgh",
     },
     {
