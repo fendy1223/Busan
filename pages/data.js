@@ -754,9 +754,9 @@ export const RESERVATIONS = {
       note: "11:00｜4人<br>12:00｜4人<br>11:00｜4人無關<br>12:00｜4人無關",
     },
     {
-      mealLabel: "10/27 午餐",
+      mealLabel: "10/27 晚餐",
       name: "醬蟹",
-      note: "12:00｜8人",
+      note: "19:00｜8人",
     },
     {
       mealLabel: "10/27 膠囊列車・尾浦出發",
