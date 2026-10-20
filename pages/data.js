@@ -402,7 +402,7 @@ export const DAYS = [
             url: "https://www.catchtable.net/zh-TW/shop/hgh",
           },
         ],
-        desc: "海雲台 CATCHTABLE 當天／現場候位<br> 19:30 8人 已預訂",
+        desc: "海雲台 CATCHTABLE 當天／現場候位<br> 20:00 8人 已預訂",
         type: "晚餐",
       },
       {
@@ -759,7 +759,7 @@ export const RESERVATIONS = {
     {
       mealLabel: "10/27 晚餐",
       name: "韓牛",
-      note: "19:30｜4+4人",
+      note: "20:00｜8人",
     },
     {
       mealLabel: "10/28 晚餐",
